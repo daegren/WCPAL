@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCPAL", "WCPAL\WCPAL.csproj", "{A02AC64C-B245-445E-90A3-860BB47DB185}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FA00E048-1D04-435B-A9D3-AF23AF8E7C5E}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		WCPAL.vsmdi = WCPAL.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCPAL.Tests", "WCPAL.Tests\WCPAL.Tests.csproj", "{CF068DD1-927C-477F-B6C0-6459FFEA20E1}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs20
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WCPAL.Tests\\WCPAL.Tests.csproj
+		SccProjectName1 = WCPAL.Tests
+		SccLocalPath1 = WCPAL.Tests
+		SccProjectUniqueName2 = WCPAL\\WCPAL.csproj
+		SccProjectName2 = WCPAL
+		SccLocalPath2 = WCPAL
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = WCPAL.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A02AC64C-B245-445E-90A3-860BB47DB185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A02AC64C-B245-445E-90A3-860BB47DB185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A02AC64C-B245-445E-90A3-860BB47DB185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A02AC64C-B245-445E-90A3-860BB47DB185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF068DD1-927C-477F-B6C0-6459FFEA20E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF068DD1-927C-477F-B6C0-6459FFEA20E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF068DD1-927C-477F-B6C0-6459FFEA20E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF068DD1-927C-477F-B6C0-6459FFEA20E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

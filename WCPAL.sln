@@ -13,18 +13,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCPAL.Tests", "WCPAL.Tests\WCPAL.Tests.csproj", "{CF068DD1-927C-477F-B6C0-6459FFEA20E1}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs20
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = WCPAL.Tests\\WCPAL.Tests.csproj
-		SccProjectName1 = WCPAL.Tests
-		SccLocalPath1 = WCPAL.Tests
-		SccProjectUniqueName2 = WCPAL\\WCPAL.csproj
-		SccProjectName2 = WCPAL
-		SccLocalPath2 = WCPAL
-	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = WCPAL.vsmdi
 	EndGlobalSection

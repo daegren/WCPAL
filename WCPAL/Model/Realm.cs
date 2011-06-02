@@ -13,6 +13,7 @@ namespace WCPAL.Model
         private bool _status;
         private bool _queue;
         private String _population;
+        private DateTime _lastUpdated;
 
         public Realm(string name, string slug, RealmType type, bool status, bool queue, string population)
         {
@@ -22,6 +23,7 @@ namespace WCPAL.Model
             _status = status;
             _queue = queue;
             _population = population;
+            _lastUpdated = DateTime.Now;
         }
 
         public String Name
@@ -52,6 +54,11 @@ namespace WCPAL.Model
         public String Population
         {
             get { return _population; }
+        }
+
+        public DateTime LastUpdated
+        {
+            get { return _lastUpdated; }
         }
 
     }

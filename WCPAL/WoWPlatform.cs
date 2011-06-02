@@ -19,6 +19,11 @@ namespace WCPAL
             base.InitializeConnection(wowApiUrl);
         }
 
+        /// <summary>
+        /// Gets the current status of a specific realm
+        /// </summary>
+        /// <param name="realm">The realm name to lookup</param>
+        /// <returns>A <see cref="WCPAL.Model.Realm"/> which contains the current status of the realm.</returns>
         public Realm GetRealmStatus(string realm)
         {
             if (String.IsNullOrEmpty(realm))
@@ -72,35 +77,16 @@ namespace WCPAL
         private static Realm ReadRealm(XElement rlm)
         {
             Realm r;
-            RealmType rt;
-
-            switch (rlm.Element("type").Value)
-            {
-                case "pve":
-                    rt = RealmType.PVE;
-                    break;
-                case "pvp":
-                    rt = RealmType.PVP;
-                    break;
-                case "rp":
-                    rt = RealmType.RP;
-                    break;
-                case "rppvp":
-                    rt = RealmType.RPPVP;
-                    break;
-                default:
-                    rt = RealmType.PVE;
-                    break;
-            }
 
             r = new Realm(
                 rlm.Element("name").Value,
                 rlm.Element("slug").Value,
-                rt,
+                (RealmType)Enum.Parse(typeof(RealmType), rlm.Element("type").Value.ToUpper()),
                 bool.Parse(rlm.Element("status").Value),
                 bool.Parse(rlm.Element("queue").Value),
                 rlm.Element("population").Value
             );
+
             return r;
         }
     }

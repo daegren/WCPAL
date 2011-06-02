@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WCPAL.Model;
 
 namespace WCPAL.Tests
 {
@@ -12,11 +13,15 @@ namespace WCPAL.Tests
     [TestClass]
     public class WoWPlatformTests
     {
+
+        WoWPlatform wp;
+        string testRealm = "Llane";
+        List<String> testRealmList = new List<String>();
+
         public WoWPlatformTests()
         {
-            //
-            // TODO: Add constructor logic here
-            //
+            wp = new WoWPlatform();
+            
         }
 
         private TestContext testContextInstance;
@@ -37,34 +42,27 @@ namespace WCPAL.Tests
             }
         }
 
-        #region Additional test attributes
-        //
-        // You can use the following additional attributes as you write your tests:
-        //
-        // Use ClassInitialize to run code before running the first test in the class
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Use ClassCleanup to run code after all tests in a class have run
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Use TestInitialize to run code before running each test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Use TestCleanup to run code after each test has run
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
+        [TestMethod]
+        public void GetSingleRealmStatus()
+        {
+            Realm r = wp.GetRealmStatus(testRealm);
+
+            Assert.IsTrue(r.Name.Equals(testRealm), "Didn't return the correct realm");
+            Assert.IsTrue(r.Type.Equals(RealmType.PVE), "Didn't return the correct realm type");
+        }
 
         [TestMethod]
-        public void TestMethod1()
+        public void GetMultipleRealmStatus()
         {
-            //
-            // TODO: Add test logic here
-            //
+            testRealmList.Add(testRealm);
+            testRealmList.Add("Sentinels");
+            testRealmList.Add("Moon Guard");
+
+            List<Realm> realms = (List<Realm>)wp.GetRealmStatus(testRealmList);
+
+            Assert.IsTrue(realms[0].Name.Equals(testRealmList[0]), "First realm name is incorrect");
+            Assert.IsTrue(realms[1].Type.Equals(RealmType.RP), "Second realm type is incorrect");
+            Assert.IsTrue(realms[2].Slug.Equals("moon-guard"), "Third realm slug is incorrect");
         }
     }
 }

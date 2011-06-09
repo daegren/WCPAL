@@ -38,6 +38,9 @@ namespace WCPAL
 
             r = ReadRealm(rlm);
 
+            if (r.Name.ToLower() != realm.ToLower())
+                throw new InvalidRealmException(realm);
+
             return r;
         }
         

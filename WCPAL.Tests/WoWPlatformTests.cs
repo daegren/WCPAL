@@ -21,7 +21,6 @@ namespace WCPAL.Tests
         public WoWPlatformTests()
         {
             wp = new WoWPlatform();
-            
         }
 
         private TestContext testContextInstance;

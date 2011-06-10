@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasePlatform.cs" />
+    <Compile Include="InvalidRealmException.cs" />
     <Compile Include="WoWPlatform.cs" />
     <Compile Include="Model\Realm.cs" />
     <Compile Include="Model\RealmType.cs" />

@@ -74,7 +74,19 @@ namespace WCPAL
 
         public IEnumerable<Realm> GetRealmStatus()
         {
-            throw new NotImplementedException();
+            List<Realm> rlms = new List<Realm>();
+
+            XmlDictionaryReader xdr = ProcessRequest("realm/status");
+
+            XElement el = XElement.Load(xdr);
+            XElement rlm = el.Element("realms");
+
+            foreach (XElement e in rlm.Elements())
+            {
+                rlms.Add(ReadRealm(e));
+            }
+
+            return rlms;
         }
 
         private static Realm ReadRealm(XElement rlm)

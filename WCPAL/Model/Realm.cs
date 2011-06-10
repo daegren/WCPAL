@@ -61,5 +61,14 @@ namespace WCPAL.Model
             get { return _lastUpdated; }
         }
 
+        public override bool Equals(object obj)
+        {
+            Realm r = (Realm)obj;
+            if (r.Name == _name && r.Slug == _slug && r.Type == _type)
+                return true;
+            else
+                return false;
+        }
+
     }
 }

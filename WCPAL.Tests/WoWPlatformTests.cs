@@ -63,5 +63,23 @@ namespace WCPAL.Tests
             Assert.IsTrue(realms[1].Type.Equals(RealmType.RP), "Second realm type is incorrect");
             Assert.IsTrue(realms[2].Slug.Equals("moon-guard"), "Third realm slug is incorrect");
         }
+
+        [TestMethod]
+        public void GetAllRealmStatus()
+        {
+            Realm tr = new Realm(
+                "Llane",
+                "llane",
+                RealmType.PVE,
+                true,
+                true,
+                "med"
+            );
+
+            List<Realm> realms = (List<Realm>)wp.GetRealmStatus();
+
+            Assert.IsTrue(realms.Count > 0, "Method did not return any realms");
+            Assert.IsTrue(realms.Contains(tr), "Method did not return a valid list of realms");
+        }
     }
 }

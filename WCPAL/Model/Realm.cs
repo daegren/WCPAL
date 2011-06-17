@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,11 +63,24 @@ namespace WCPAL.Model
 
         public override bool Equals(object obj)
         {
-            Realm r = (Realm)obj;
-            if (r.Name == _name && r.Slug == _slug && r.Type == _type)
-                return true;
-            else
+            Realm r = obj as Realm;
+
+            return Equals(r);
+        }
+
+        public override bool Equals(Realm realm)
+        {
+            if (realm == null)
+            {
                 return false;
+            }
+
+            return (realm.Name == _name && realm.Type == _type && realm.Slug == _slug);
+        }
+
+        public override int GetHashCode()
+        {
+            return _name.GetHashCode() ^ _type.GetHashCode() ^ _slug.GetHashCode();
         }
 
     }

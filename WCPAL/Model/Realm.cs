@@ -68,7 +68,7 @@ namespace WCPAL.Model
             return Equals(r);
         }
 
-        public override bool Equals(Realm realm)
+        public bool Equals(Realm realm)
         {
             if (realm == null)
             {

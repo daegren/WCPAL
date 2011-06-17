@@ -63,13 +63,21 @@ namespace WCPAL.Model
 
         public override bool Equals(object obj)
         {
+            // if parameter is null return false
+            if (obj == null)
+                return false;
+
+            // if parameter cannot be cast into a Realm return false
             Realm r = obj as Realm;
+            if ((System.Object)r == null)
+                return false;
 
             return Equals(r);
         }
 
         public bool Equals(Realm realm)
         {
+            // if paramter is null return false;
             if (realm == null)
             {
                 return false;
@@ -81,6 +89,24 @@ namespace WCPAL.Model
         public override int GetHashCode()
         {
             return _name.GetHashCode() ^ _type.GetHashCode() ^ _slug.GetHashCode();
+        }
+
+        public static bool operator ==(Realm a, Realm b)
+        {
+            // If both are null, or both are the same instance, return true.
+            if (Object.ReferenceEquals(a, b))
+                return true;
+
+            // if one is null, but not both, return false.
+            if (((object)a == null) || ((object)b == null))
+                return false;
+
+            return (a.Name == b.Name && a.Type == b.Type && a.Slug == b.Slug);
+        }
+
+        public static bool operator !=(Realm a, Realm b)
+        {
+            return !(a == b);
         }
 
     }

@@ -1,7 +1,6 @@
 ﻿using System.Net;
-using System;
-using System.Xml;
 using System.Runtime.Serialization.Json;
+using System.Xml;
 
 namespace WCPAL
 {

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 
 namespace WCPAL.Model
 {
-    class Emblem
+    public class Emblem
     {
         private int _icon;
         private string _iconColor;
@@ -74,6 +75,21 @@ namespace WCPAL.Model
         public static bool operator !=(Emblem a, Emblem b)
         {
             return !(a == b);
+        }
+
+        public static Emblem ReadEmblem(XElement emblem)
+        {
+            Emblem e;
+
+            e = new Emblem(
+                int.Parse(emblem.Element("icon").Value),
+                emblem.Element("iconColor").Value,
+                int.Parse(emblem.Element("border").Value),
+                emblem.Element("borderColor").Value,
+                emblem.Element("backgroundColor").Value
+                );
+
+            return e;
         }
     }
 }

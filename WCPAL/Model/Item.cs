@@ -15,7 +15,6 @@ namespace WCPAL.Model
         private int _enchant;
         private List<int> _gems;
         private List<int> _sets;
-        private int _enchant;
 
         public string Icon { get { return _icon; } }
         public int Id { get { return _id; } }

@@ -41,6 +41,11 @@ namespace WCPAL
             return r;
         }
         
+        /// <summary>
+        /// Get the current status of a set of realms
+        /// </summary>
+        /// <param name="realms">The list of realms to lookup.</param>
+        /// <returns>An <see cref="IEnumerable"/> containing the <see cref="Realm"/> objects retrieved.</returns>
         public IEnumerable<Realm> GetRealmStatus(List<String> realms)
         {
             if (realms == null || realms.Count == 0)
@@ -69,6 +74,10 @@ namespace WCPAL
             return rlms;
         }
 
+        /// <summary>
+        /// Gets the status of all the realms in the current locale
+        /// </summary>
+        /// <returns>An <see cref="IEnumerable"/> containing all the <see cref="Realm"/> objects returned.</returns>
         public IEnumerable<Realm> GetRealmStatus()
         {
             List<Realm> rlms = new List<Realm>();
@@ -85,7 +94,5 @@ namespace WCPAL
 
             return rlms;
         }
-
-        
     }
 }

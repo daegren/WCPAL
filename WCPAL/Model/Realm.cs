@@ -1,4 +1,5 @@
 using System;
+using System.Xml.Linq;
 
 namespace WCPAL.Model
 {
@@ -106,5 +107,20 @@ namespace WCPAL.Model
             return !(a == b);
         }
 
+        public static Realm ReadRealm(XElement rlm)
+        {
+            Realm r;
+
+            r = new Realm(
+                rlm.Element("name").Value,
+                rlm.Element("slug").Value,
+                (RealmType)Enum.Parse(typeof(RealmType), rlm.Element("type").Value.ToUpper()),
+                bool.Parse(rlm.Element("status").Value),
+                bool.Parse(rlm.Element("queue").Value),
+                rlm.Element("population").Value
+            );
+
+            return r;
+        }
     }
 }

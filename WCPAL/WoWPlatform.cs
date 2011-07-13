@@ -33,7 +33,7 @@ namespace WCPAL
             XElement el = XElement.Load(xdr);
             XElement rlm = el.Element("realms").Element("item");
 
-            r = ReadRealm(rlm);
+            r = Realm.ReadRealm(rlm);
 
             if (r.Name.ToLower() != realm.ToLower())
                 throw new InvalidRealmException(realm);
@@ -63,7 +63,7 @@ namespace WCPAL
 
             foreach (XElement e in rlm.Elements())
             {
-                rlms.Add(ReadRealm(e));
+                rlms.Add(Realm.ReadRealm(e));
             }
 
             return rlms;
@@ -80,26 +80,12 @@ namespace WCPAL
 
             foreach (XElement e in rlm.Elements())
             {
-                rlms.Add(ReadRealm(e));
+                rlms.Add(Realm.ReadRealm(e));
             }
 
             return rlms;
         }
 
-        private static Realm ReadRealm(XElement rlm)
-        {
-            Realm r;
-
-            r = new Realm(
-                rlm.Element("name").Value,
-                rlm.Element("slug").Value,
-                (RealmType)Enum.Parse(typeof(RealmType), rlm.Element("type").Value.ToUpper()),
-                bool.Parse(rlm.Element("status").Value),
-                bool.Parse(rlm.Element("queue").Value),
-                rlm.Element("population").Value
-            );
-
-            return r;
-        }
+        
     }
 }

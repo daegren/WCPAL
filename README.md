@@ -6,6 +6,9 @@ This is currently under heavy development and will be fairly unstable until it i
 
 Sample
 ==========
+
+using System;
+
 static void Main(string[] args)
 {
 }

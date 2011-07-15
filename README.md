@@ -7,8 +7,14 @@ This is currently under heavy development and will be fairly unstable until it i
 Sample
 ==========
 
-using System;
+	using System;
 
-static void Main(string[] args)
-{
-}
+	namespace WCPAL_Test
+	{
+		class Program
+		{
+			static void Main(string[] args)
+			{
+			}
+		}
+	}

@@ -52,11 +52,16 @@
     <Compile Include="BasePlatform.cs" />
     <Compile Include="InvalidRealmException.cs" />
     <Compile Include="Model\EquipmentSlot.cs" />
+    <Compile Include="Model\GlyphSet.cs" />
     <Compile Include="Model\Guild.cs" />
     <Compile Include="Model\Emblem.cs" />
     <Compile Include="Model\GuildMember.cs" />
     <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\PowerType.cs" />
     <Compile Include="Model\Quality.cs" />
+    <Compile Include="Model\Stats.cs" />
+    <Compile Include="Model\Talent.cs" />
+    <Compile Include="Model\TalentTree.cs" />
     <Compile Include="WoWPlatform.cs" />
     <Compile Include="Model\Realm.cs" />
     <Compile Include="Model\RealmType.cs" />

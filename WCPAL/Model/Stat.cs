@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WCPAL.Model
 {
-    public class Stats
+    public class Stat
     {
         private int _health;
 

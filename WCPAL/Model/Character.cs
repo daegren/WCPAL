@@ -23,6 +23,12 @@ namespace WCPAL.Model
         private ItemSet _items;
         private List<Reputation> _reputation;
         private List<Title> _titles;
+        private ProfessionSet _professions;
+        private Appearance _appearance;
+        private List<int> _companions;
+        private List<int> _mounts;
+        private List<Pet> _pets;
+        private Achievement _acheivements;
 
     }
 }

@@ -72,7 +72,7 @@
     <Compile Include="Model\Progression.cs" />
     <Compile Include="Model\Quality.cs" />
     <Compile Include="Model\Race.cs" />
-    <Compile Include="Model\Raids.cs" />
+    <Compile Include="Model\Raid.cs" />
     <Compile Include="Model\Reputation.cs" />
     <Compile Include="Model\ReputationStanding.cs" />
     <Compile Include="Model\Stat.cs" />

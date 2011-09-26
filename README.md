@@ -7,14 +7,21 @@ This is currently under heavy development and will be fairly unstable until it i
 Sample
 ==========
 
-	using System;
-
-	namespace WCPAL_Test
-	{
-		class Program
-		{
-			static void Main(string[] args)
-			{
-			}
-		}
-	}
+    using System;
+    using WCPAL.Model;
+    
+    namespace WCPAL_Test
+    {
+      class Program
+      {
+        static void Main(string[] args)
+        {
+          WoWPlatform wp = new WoWPlatform();
+          String realmName = "Llane";
+          
+          Realm r = wp.GetRealmStatus(realmName);
+          
+          Console.println(realmName + "'s current status is: " + r.Status ? "Online" : "Offline");
+        }
+      }
+    }

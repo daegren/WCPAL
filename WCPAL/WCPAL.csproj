@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasePlatform.cs" />
+    <Compile Include="BattlenetAuthenticationOptions.cs" />
+    <Compile Include="BattlenetConnectionOptions.cs" />
     <Compile Include="InvalidRealmException.cs" />
     <Compile Include="Model\Achievement.cs" />
     <Compile Include="Model\Appearance.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Model\Quality.cs" />
     <Compile Include="Model\Race.cs" />
     <Compile Include="Model\Raid.cs" />
+    <Compile Include="Region.cs" />
     <Compile Include="Model\Reputation.cs" />
     <Compile Include="Model\ReputationStanding.cs" />
     <Compile Include="Model\Stat.cs" />

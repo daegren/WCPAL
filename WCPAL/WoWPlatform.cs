@@ -9,13 +9,17 @@ namespace WCPAL
 {
     public class WoWPlatform : BasePlatform
     {
-        private string wowApiUrl = "wow/";
-
-        public WoWPlatform()
+        public WoWPlatform() :
+            base("wow")
         {
-            base.InitializeConnection(wowApiUrl);
         }
 
+        public WoWPlatform(Region region) :
+            base("wow", region)
+        {
+        }
+
+        #region Realm Methods
         /// <summary>
         /// Gets the current status of a specific realm
         /// </summary>
@@ -94,5 +98,7 @@ namespace WCPAL
 
             return rlms;
         }
+        #endregion
+
     }
 }

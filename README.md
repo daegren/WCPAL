@@ -4,6 +4,11 @@ The World of Warcraft Community Portal API Library (WCPAL) is a C# .net library 
 
 This is currently under heavy development and will be fairly unstable until it is finished. Currently you may use the API library to collect realm information.
 
+Documentation
+==========
+
+You can view the documentation for this project at http://daegren.github.com/WCPAL
+
 Sample
 ==========
 

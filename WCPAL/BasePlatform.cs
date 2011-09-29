@@ -21,11 +21,6 @@ namespace WCPAL
 
         WebRequest _wr;
 
-        protected BasePlatform(String url)
-        {
-            _controller = url;
-        }
-
         protected BasePlatform(String url, BattlenetConnectionOptions connectionOptions)
         {
             _controller = url;

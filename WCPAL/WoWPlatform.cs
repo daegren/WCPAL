@@ -8,11 +8,18 @@ namespace WCPAL
 {
     public class WoWPlatform : BasePlatform
     {
+        /// <summary>
+        /// Creates a new WoWPlatform Object with the default connection options. See <see cref="BattlenetConnectionOptions"/>.
+        /// </summary>
         public WoWPlatform() :
-            base("wow")
+            base("wow", new BattlenetConnectionOptions())
         {
         }
 
+        /// <summary>
+        /// Creates a new WoWPlatform object with a specified set of connection options.
+        /// </summary>
+        /// <param name="connectionOptions">The connection options to use when accessing the community API.</param>
         public WoWPlatform(BattlenetConnectionOptions connectionOptions) :
             base("wow", connectionOptions)
         {

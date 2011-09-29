@@ -12,16 +12,16 @@ Sample
     
     namespace WCPAL_Test
     {
-      class Program
-      {
-        static void Main(string[] args)
+        class Program
         {
-          WoWPlatform wp = new WoWPlatform();
-          String realmName = "Llane";
+            static void Main(string[] args)
+            {
+                WoWPlatform wp = new WoWPlatform();
+                String realmName = "Llane";
           
-          Realm r = wp.GetRealmStatus(realmName);
+                Realm r = wp.GetRealmStatus(realmName);
           
-          Console.println(realmName + "'s current status is: " + r.Status ? "Online" : "Offline");
+                Console.println(realmName + "'s current status is: " + r.Status ? "Online" : "Offline");
+            }
         }
-      }
     }

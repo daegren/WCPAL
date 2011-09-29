@@ -38,3 +38,8 @@ _ReSharper*/
 
 #Project files
 [Bb]uild/
+
+#doxygen files
+*.doxygen
+doxygen.exe
+docs/

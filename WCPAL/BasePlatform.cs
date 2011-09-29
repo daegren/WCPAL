@@ -86,7 +86,7 @@ namespace WCPAL
                 {
                     m = "Service temporarily unavailable";
                 }
-                else
+                else if (code == HttpStatusCode.InternalServerError)
                 {
                     m = XElement.Load(x).Element("reason").Value;
                 }

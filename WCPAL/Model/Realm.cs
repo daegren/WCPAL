@@ -1,7 +1,7 @@
 using System;
 using System.Xml.Linq;
 
-namespace WCPAL.Model
+namespace WCPAL
 {
     public class Realm
     {

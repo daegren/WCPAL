@@ -1,5 +1,5 @@
 ﻿
-namespace WCPAL.Model
+namespace WCPAL
 {
     public enum RealmType
     {

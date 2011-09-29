@@ -7,7 +7,7 @@ This is currently under heavy development and will be fairly unstable until it i
 Documentation
 ==========
 
-You can view the documentation for this project at http://daegren.github.com/WCPAL
+You can view the technical documentation for this project at http://daegren.github.com/WCPAL
 
 Sample
 ==========

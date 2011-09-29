@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BasePlatform.cs" />
     <Compile Include="BattlenetAuthenticationOptions.cs" />
+    <Compile Include="BattlenetConnectionException.cs" />
     <Compile Include="BattlenetConnectionOptions.cs" />
     <Compile Include="InvalidRealmException.cs" />
     <Compile Include="Model\Achievement.cs" />

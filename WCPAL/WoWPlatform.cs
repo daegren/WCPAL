@@ -19,6 +19,11 @@ namespace WCPAL
         {
         }
 
+        public WoWPlatform(Region region, BattlenetConnectionOptions connectionOptions) :
+            base("wow", region, connectionOptions)
+        {
+        }
+
         #region Realm Methods
         /// <summary>
         /// Gets the current status of a specific realm

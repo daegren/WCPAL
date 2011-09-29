@@ -16,5 +16,10 @@ namespace WCPAL
         public bool IsSecure { get { return _https; } set { _https = value; } }
         public BattlenetAuthenticationOptions AuthenticationOptions { get { return _authOptions; } set { _authOptions = value; } }
         public String Locale { get { return _locale; } set { _locale = value; } }
+
+        public BattlenetConnectionOptions()
+        {
+            // TODO: assign default values
+        }
     }
 }

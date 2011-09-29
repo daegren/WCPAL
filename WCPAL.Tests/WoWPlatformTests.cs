@@ -18,7 +18,7 @@ namespace WCPAL.Tests
 
         public WoWPlatformTests()
         {
-            wp = new WoWPlatform(new BattlenetConnectionOptions());
+            wp = new WoWPlatform();
         }
 
         private TestContext testContextInstance;
@@ -39,6 +39,7 @@ namespace WCPAL.Tests
             }
         }
 
+        #region Realm Tests
         [TestMethod]
         public void GetSingleRealmStatus()
         {
@@ -102,5 +103,6 @@ namespace WCPAL.Tests
                 Assert.Fail(ex.Message);
             }
         }
+        #endregion
     }
 }

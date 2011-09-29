@@ -3,6 +3,9 @@ using System.Xml.Linq;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// Represents a World of Warcraft Realm
+    /// </summary>
     public class Realm
     {
         private String _name;
@@ -24,36 +27,57 @@ namespace WCPAL
             _lastUpdated = DateTime.Now;
         }
 
+        /// <summary>
+        /// The name of the realm
+        /// </summary>
         public String Name
         {
             get { return _name; }
         }
 
+        /// <summary>
+        /// A web safe version of the realm name
+        /// </summary>
         public String Slug
         {
             get { return _slug; }
         }
 
+        /// <summary>
+        /// The type of realm this is, whether PVE, PVP, RP or RPPVP. See <see cref="RealmType"/>.
+        /// </summary>
         public RealmType Type
         {
             get { return _type; }
         }
 
+        /// <summary>
+        /// Current status of the realm. True if the realm is online, false if it is not.
+        /// </summary>
         public bool Status
         {
             get { return _status; }
         }
 
+        /// <summary>
+        /// Current queue status. True if the realm has a queue, false if not.
+        /// </summary>
         public bool Queue
         {
             get { return _queue; }
         }
 
+        /// <summary>
+        /// Current population on the realm. Can be, but not limited to, Low, Medium, High.
+        /// </summary>
         public String Population
         {
             get { return _population; }
         }
 
+        /// <summary>
+        /// Time this object was last updated.
+        /// </summary>
         public DateTime LastUpdated
         {
             get { return _lastUpdated; }
@@ -99,7 +123,7 @@ namespace WCPAL
             if (((object)a == null) || ((object)b == null))
                 return false;
 
-            return (a.Name == b.Name && a.Type == b.Type && a.Slug == b.Slug);
+            return (a.Equals(b));
         }
 
         public static bool operator !=(Realm a, Realm b)
@@ -107,6 +131,11 @@ namespace WCPAL
             return !(a == b);
         }
 
+        /// <summary>
+        /// Creates a <see cref="Realm"/> object using an <see cref="XElement"/> as data.
+        /// </summary>
+        /// <param name="rlm">The <see cref="XElement"/> containg the realm data.</param>
+        /// <returns>A <see cref="Realm"/> object containing all the data it was passed.</returns>
         public static Realm ReadRealm(XElement rlm)
         {
             Realm r;

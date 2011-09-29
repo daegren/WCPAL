@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
-using WCPAL.Model;
 
 namespace WCPAL
 {
@@ -14,13 +13,8 @@ namespace WCPAL
         {
         }
 
-        public WoWPlatform(Region region) :
-            base("wow", region)
-        {
-        }
-
-        public WoWPlatform(Region region, BattlenetConnectionOptions connectionOptions) :
-            base("wow", region, connectionOptions)
+        public WoWPlatform(BattlenetConnectionOptions connectionOptions) :
+            base("wow", connectionOptions)
         {
         }
 

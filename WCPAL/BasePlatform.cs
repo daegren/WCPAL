@@ -2,7 +2,6 @@
 using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Xml;
-using WCPAL.Model;
 using System.Text;
 using System.Security.Cryptography;
 using System.Xml.Linq;
@@ -17,47 +16,39 @@ namespace WCPAL
         String _httpsCnApiUrl = "https://battlenet.com.cn/api/{0}/{2}";
         String _controller;
         String _action;
-        Region _region;
 
         BattlenetConnectionOptions _connectionOptions;
 
         WebRequest _wr;
 
-        internal BasePlatform(String url)
+        protected BasePlatform(String url)
         {
             _controller = url;
         }
 
-        internal BasePlatform(String url, Region region)
+        protected BasePlatform(String url, BattlenetConnectionOptions connectionOptions)
         {
             _controller = url;
-            _region = region;
-        }
-
-        internal BasePlatform(String url, Region region, BattlenetConnectionOptions connectionOptions)
-        {
-            _controller = url;
-            _region = region;
             _connectionOptions = connectionOptions;
         }
 
-        internal XmlDictionaryReader ProcessRequest(String request)
+        protected XmlDictionaryReader ProcessRequest(String request)
         {
             _action = request;
             String r = "";
             
-            if (_region != Region.CN && _connectionOptions.IsSecure)
-                r = String.Format(_httpsApiUrl, _region.ToString().ToLower(), _controller, _action);
-            else if (_region != Region.CN)
-                r = String.Format(_apiUrl, _region.ToString().ToLower(), _controller, _action);
-            else if (_region == Region.CN && _connectionOptions.IsSecure)
+            if (_connectionOptions.Region != Region.CN && _connectionOptions.IsSecure)
+                r = String.Format(_httpsApiUrl, _connectionOptions.Region.ToString().ToLower(), _controller, _action);
+            else if (_connectionOptions.Region != Region.CN)
+                r = String.Format(_apiUrl, _connectionOptions.Region.ToString().ToLower(), _controller, _action);
+            else if (_connectionOptions.Region == Region.CN && _connectionOptions.IsSecure)
                 r = String.Format(_httpsCnApiUrl, _controller, _action);
             else
                 r = String.Format(_cnApiUrl, _controller, _action);
 
             _wr = WebRequest.Create(r);
 
-            if (_connectionOptions.AuthenticationOptions != null)
+            if (_connectionOptions.AuthenticationOptions.IsAuthenticated)
             {
                 BattlenetAuthenticationOptions authOptions = _connectionOptions.AuthenticationOptions;
                 DateTime currentTime = DateTime.UtcNow;

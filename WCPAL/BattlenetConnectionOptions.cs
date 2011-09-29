@@ -20,6 +20,15 @@ namespace WCPAL
         public BattlenetConnectionOptions()
         {
             // TODO: assign default values
+            _region = Region.US;
+            _https = false;
+            _authOptions = new BattlenetAuthenticationOptions()
+            {
+                PrivateKey = "",
+                PublicKey = "",
+                IsAuthenticated = false
+            };
+            _locale = "en-US";
         }
     }
 }

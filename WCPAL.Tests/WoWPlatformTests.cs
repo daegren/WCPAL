@@ -18,7 +18,7 @@ namespace WCPAL.Tests
 
         public WoWPlatformTests()
         {
-            wp = new WoWPlatform();
+            wp = new WoWPlatform(Region.US);
         }
 
         private TestContext testContextInstance;

@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="WCPAL::Realm" -->
-<p>Represents a World of Warcraft <a class="el" href="class_w_c_p_a_l_1_1_realm.html" title="Represents a World of Warcraft Realm.">Realm</a>.  
+<p>A World of Warcraft <a class="el" href="class_w_c_p_a_l_1_1_realm.html" title="A World of Warcraft Realm.">Realm</a>.  
  <a href="class_w_c_p_a_l_1_1_realm.html#details">More...</a></p>
 
 <p><a href="class_w_c_p_a_l_1_1_realm-members.html">List of all members.</a></p>
@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f682b3f8c02d297a938b582ee2825a5"></a><!-- doxytag: member="WCPAL::Realm::Realm" ref="a2f682b3f8c02d297a938b582ee2825a5" args="(string name, string slug, RealmType type, bool status, bool queue, string population)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Realm</b> (string name, string slug, RealmType type, bool status, bool queue, string population)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Realm</b> (string name, string slug, <a class="el" href="namespace_w_c_p_a_l.html#a5a4bd82ea5673f7b36b6ad935326e34e">RealmType</a> type, bool status, bool queue, string population)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aefa44e6f3908347cce28f554995c59ce"></a><!-- doxytag: member="WCPAL::Realm::Equals" ref="aefa44e6f3908347cce28f554995c59ce" args="(object obj)" -->
 override bool&#160;</td><td class="memItemRight" valign="bottom"><b>Equals</b> (object obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65dd7d2927e95a6bce1bb4d86c842cc2"></a><!-- doxytag: member="WCPAL::Realm::Equals" ref="a65dd7d2927e95a6bce1bb4d86c842cc2" args="(Realm realm)" -->
@@ -113,15 +113,15 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed6afb69c0d85d31ff2794ddeeeee603"></a><!-- doxytag: member="WCPAL::Realm::operator!=" ref="aed6afb69c0d85d31ff2794ddeeeee603" args="(Realm a, Realm b)" -->
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (<a class="el" href="class_w_c_p_a_l_1_1_realm.html">Realm</a> a, <a class="el" href="class_w_c_p_a_l_1_1_realm.html">Realm</a> b)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_w_c_p_a_l_1_1_realm.html">Realm</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_c_p_a_l_1_1_realm.html#a7c737c4601de9ca8954fd3e995ee5b59">ReadRealm</a> (XElement rlm)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="class_w_c_p_a_l_1_1_realm.html" title="Represents a World of Warcraft Realm.">Realm</a> object using an XElement as data.  <a href="#a7c737c4601de9ca8954fd3e995ee5b59"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="class_w_c_p_a_l_1_1_realm.html" title="A World of Warcraft Realm.">Realm</a> object using an XElement as data.  <a href="#a7c737c4601de9ca8954fd3e995ee5b59"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_c_p_a_l_1_1_realm.html#a6b62854def70501bfeb77bc2db75365a">Name</a><code> [get]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the realm.  <a href="#a6b62854def70501bfeb77bc2db75365a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_c_p_a_l_1_1_realm.html#a9a4fbae9101ef3562c36614240ded51a">Slug</a><code> [get]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A web safe version of the realm name.  <a href="#a9a4fbae9101ef3562c36614240ded51a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">RealmType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_c_p_a_l_1_1_realm.html#ab4fd8123424eb56ca98d129862d01f14">Type</a><code> [get]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of realm this is, whether PVE, PVP, RP or RPPVP. See RealmType.  <a href="#ab4fd8123424eb56ca98d129862d01f14"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_w_c_p_a_l.html#a5a4bd82ea5673f7b36b6ad935326e34e">RealmType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_c_p_a_l_1_1_realm.html#ab4fd8123424eb56ca98d129862d01f14">Type</a><code> [get]</code></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of realm this is, whether PVE, PVP, RP or RPPVP. See <a class="el" href="namespace_w_c_p_a_l.html#a5a4bd82ea5673f7b36b6ad935326e34e" title="The type of Realm.">RealmType</a>.  <a href="#ab4fd8123424eb56ca98d129862d01f14"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_c_p_a_l_1_1_realm.html#a0ee8f0379d1e26d2936af8d0972c6897">Status</a><code> [get]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Current status of the realm. True if the realm is online, false if it is not.  <a href="#a0ee8f0379d1e26d2936af8d0972c6897"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_c_p_a_l_1_1_realm.html#a6cbefe33418575f647a394e496ebd2ee">Queue</a><code> [get]</code></td></tr>
@@ -132,7 +132,7 @@ Properties</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Time this object was last updated.  <a href="#a2e6e490e046e17952c0dcb49fbad8cce"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Represents a World of Warcraft <a class="el" href="class_w_c_p_a_l_1_1_realm.html" title="Represents a World of Warcraft Realm.">Realm</a>. </p>
+<div class="textblock"><p>A World of Warcraft <a class="el" href="class_w_c_p_a_l_1_1_realm.html" title="A World of Warcraft Realm.">Realm</a>. </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a7c737c4601de9ca8954fd3e995ee5b59"></a><!-- doxytag: member="WCPAL::Realm::ReadRealm" ref="a7c737c4601de9ca8954fd3e995ee5b59" args="(XElement rlm)" -->
 <div class="memitem">
@@ -149,14 +149,14 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Creates a <a class="el" href="class_w_c_p_a_l_1_1_realm.html" title="Represents a World of Warcraft Realm.">Realm</a> object using an XElement as data. </p>
+<p>Creates a <a class="el" href="class_w_c_p_a_l_1_1_realm.html" title="A World of Warcraft Realm.">Realm</a> object using an XElement as data. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">rlm</td><td>The XElement containg the realm data.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A <a class="el" href="class_w_c_p_a_l_1_1_realm.html" title="Represents a World of Warcraft Realm.">Realm</a> object containing all the data it was passed.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A <a class="el" href="class_w_c_p_a_l_1_1_realm.html" title="A World of Warcraft Realm.">Realm</a> object containing all the data it was passed.</dd></dl>
 
 </div>
 </div>
@@ -256,13 +256,13 @@ Properties</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">RealmType WCPAL.Realm.Type<code> [get]</code></td>
+          <td class="memname"><a class="el" href="namespace_w_c_p_a_l.html#a5a4bd82ea5673f7b36b6ad935326e34e">RealmType</a> WCPAL.Realm.Type<code> [get]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>The type of realm this is, whether PVE, PVP, RP or RPPVP. See RealmType. </p>
+<p>The type of realm this is, whether PVE, PVP, RP or RPPVP. See <a class="el" href="namespace_w_c_p_a_l.html#a5a4bd82ea5673f7b36b6ad935326e34e" title="The type of Realm.">RealmType</a>. </p>
 
 </div>
 </div>
@@ -287,7 +287,7 @@ Properties</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 29 2011 17:29:13 for WCPAL by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 30 2011 12:31:38 for WCPAL by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

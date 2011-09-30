@@ -13,8 +13,9 @@ namespace WCPAL.Tests
     {
 
         WoWPlatform wp;
-        string testRealm = "Llane";
+        string testRealm = "Sentinels";
         List<String> testRealmList = new List<String>();
+        string testChar = "Daegren";
 
         public WoWPlatformTests()
         {
@@ -54,7 +55,7 @@ namespace WCPAL.Tests
             {
                 Assert.Fail(ex.Message);
             }
-            
+
         }
 
         [TestMethod]
@@ -103,6 +104,9 @@ namespace WCPAL.Tests
                 Assert.Fail(ex.Message);
             }
         }
+        #endregion
+
+        #region Character Tests
         #endregion
     }
 }

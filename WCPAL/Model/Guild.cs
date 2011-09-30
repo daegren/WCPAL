@@ -6,6 +6,9 @@ using System.Xml.Linq;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// A World of Warcraft Guild
+    /// </summary>
     public class Guild
     {
         private string _name;

@@ -6,6 +6,9 @@ using System.Xml.Linq;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// Character appearance data.
+    /// </summary>
     public class Appearance
     {
         private int _faceVariation;

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// Specific Character Talent
+    /// </summary>
     public class Talent
     {
         private bool _selected;

@@ -6,6 +6,9 @@ using System.Xml.Linq;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// A memeber belonging to a Guild. This is not a Character object.
+    /// </summary>
     public class GuildMember
     {
         private string _name;

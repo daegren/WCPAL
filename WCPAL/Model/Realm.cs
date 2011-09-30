@@ -4,7 +4,7 @@ using System.Xml.Linq;
 namespace WCPAL
 {
     /// <summary>
-    /// Represents a World of Warcraft Realm
+    /// A World of Warcraft Realm
     /// </summary>
     public class Realm
     {

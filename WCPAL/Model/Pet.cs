@@ -6,6 +6,9 @@ using System.Xml.Linq;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// A <see cref="CharacterClass.Hunter"/>s Pet and its statistics
+    /// </summary>
     public class Pet
     {
         private string _name;

@@ -5,8 +5,11 @@ using System.Text;
 
 namespace WCPAL
 {
-	public class Title
-	{
+    /// <summary>
+    /// A World of Warcraft Title.
+    /// </summary>
+    public class Title
+    {
         private int _id;
 
         public int Id
@@ -19,5 +22,5 @@ namespace WCPAL
         {
             get { return _name; }
         }
-	}
+    }
 }

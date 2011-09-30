@@ -6,6 +6,9 @@ using System.Xml.Linq;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// A Profession from World of Warcraft
+    /// </summary>
     public class Profession
     {
         private int _id;

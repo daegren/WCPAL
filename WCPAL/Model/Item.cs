@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// An Item from World of Warcraft.
+    /// </summary>
     public class Item
     {
         private string _icon;

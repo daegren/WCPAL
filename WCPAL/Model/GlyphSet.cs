@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// Set of Glyphs
+    /// </summary>
     public class GlyphSet
     {
         private List<Glyph> _prime;

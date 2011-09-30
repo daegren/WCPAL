@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// Various reputation standings.
+    /// </summary>
     public enum ReputationStanding
     {
         Hated,

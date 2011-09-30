@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// A Glyph used by a Character in their talent tree
+    /// </summary>
     public class Glyph
     {
         private int _id;

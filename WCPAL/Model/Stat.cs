@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// Character Statistics
+    /// </summary>
     public class Stat
     {
         private int _health;

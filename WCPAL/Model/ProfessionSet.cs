@@ -6,6 +6,9 @@ using System.Xml.Linq;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// A Character's set of Professions
+    /// </summary>
     public class ProfessionSet
     {
         private List<Profession> _primary;

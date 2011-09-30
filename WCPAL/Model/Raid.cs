@@ -6,6 +6,9 @@ using System.Xml.Linq;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// Details of a World of Warcraft Raid.
+    /// </summary>
     public class Raid
     {
         private string _name;

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// Character races.
+    /// </summary>
     public enum Race
     {
         Human = 1,

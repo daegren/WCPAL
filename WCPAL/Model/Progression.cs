@@ -6,6 +6,9 @@ using System.Xml.Linq;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// Progression details
+    /// </summary>
     public class Progression
     {
         private List<Raid> _raids;

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// Item quality rating.
+    /// </summary>
     public enum Quality
     {
         Junk = 0, // grey

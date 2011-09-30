@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// A Character's Talent Tree
+    /// </summary>
     public class TalentTree
     {
         private string _points;

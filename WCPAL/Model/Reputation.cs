@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// Reputation standing with a specific faction.
+    /// </summary>
     public class Reputation
     {
         private int _id;

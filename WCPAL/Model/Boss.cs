@@ -6,6 +6,9 @@ using System.Xml.Linq;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// A Boss in World of Warcraft
+    /// </summary>
     public class Boss
     {
         private string _name;

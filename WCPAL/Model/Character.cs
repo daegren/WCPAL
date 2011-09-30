@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// A player Character in World of Warcraft
+    /// </summary>
     public class Character
     {
         private int _lastModified;

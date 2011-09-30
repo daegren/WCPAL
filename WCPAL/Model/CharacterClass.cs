@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// The class of a character.
+    /// </summary>
     public enum CharacterClass
     {
         Warrior = 1,

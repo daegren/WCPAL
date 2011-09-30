@@ -6,6 +6,9 @@ using System.Xml.Linq;
 
 namespace WCPAL
 {
+    /// <summary>
+    /// The Emblem on a Guild tabard in World of Warcraft
+    /// </summary>
     public class Emblem
     {
         private int _icon;

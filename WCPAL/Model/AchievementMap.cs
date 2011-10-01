@@ -6,9 +6,9 @@ using System.Text;
 namespace WCPAL
 {
     /// <summary>
-    /// A list of <see cref="Achievement"/>s in World of Warcraft
+    /// A list of <see cref="AchievementMap"/>s in World of Warcraft
     /// </summary>
-    public class Achievement
+    public class AchievementMap
     {
         private List<int> _achievementsCompleted;
         private List<int> _achievementsCompletedTimestamp;

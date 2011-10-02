@@ -106,5 +106,34 @@ namespace WCPAL
         }
         #endregion
 
+        #region Character Methods
+
+        public Character GetCharacter(string name, string realm)
+        {
+            if (String.IsNullOrEmpty(name))
+                throw new ArgumentNullException("name");
+
+            Character c;
+
+            String req = String.Format("character/{0}/{1}", realm, name);
+            XmlDictionaryReader xdr = ProcessRequest(req);
+
+            XElement el = XElement.Load(xdr);
+            XElement cha = el.Element("item");
+
+            c = Character.ReadCharacter(cha);
+
+            if (c.Name.ToLower() != name.ToLower())
+                throw new InvalidRealmException(name);
+
+            return c;
+        }
+
+        public Character GetCharacter(string name, string realm, params string[] args)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

@@ -15,12 +15,21 @@ namespace WCPAL.Tests
         WoWPlatform wp;
         string testRealm = "Sentinels";
         List<String> testRealmList = new List<String>();
-        string testChar = "Daegren";
+        
 
+        
         public WoWPlatformTests()
         {
             wp = new WoWPlatform();
         }
+
+        [TestInitialize]
+        public void Init()
+        {
+
+        }
+
+
 
         private TestContext testContextInstance;
 
@@ -83,21 +92,13 @@ namespace WCPAL.Tests
         [TestMethod]
         public void GetAllRealmStatus()
         {
-            Realm tr = new Realm(
-                "Llane",
-                "llane",
-                RealmType.PVE,
-                true,
-                true,
-                "med"
-            );
-
             try
             {
                 List<Realm> realms = (List<Realm>)wp.GetRealmStatus();
 
                 Assert.IsTrue(realms.Count > 0, "Method did not return any realms");
-                Assert.IsTrue(realms.Contains(tr), "Method did not return a valid list of realms");
+                Realm r = realms.Find(x => x.Name == "Llane");
+                Assert.IsTrue(r != null, "Method did not return a valid list of realms");
             }
             catch (BattlenetConnectionException ex)
             {
@@ -105,8 +106,27 @@ namespace WCPAL.Tests
             }
         }
         #endregion
-
+        
         #region Character Tests
+
+        [TestMethod]
+        public void SingleCharacterWithNoExtraData()
+        {
+            string testChar = "Daegren";
+            string testRealm = "Sentinels";
+            try
+            {
+                Character c = wp.GetCharacter(testChar, testRealm);
+
+                Assert.IsTrue(c.Name == testChar, "Character name is not the same");
+
+            }
+            catch (BattlenetConnectionException ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+        }
+
         #endregion
     }
 }

@@ -47,5 +47,10 @@ namespace WCPAL
             get { return _glyphs; }
         }
 
+
+        internal static List<Talent> ReadTalent(System.Xml.Linq.XElement xElement)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

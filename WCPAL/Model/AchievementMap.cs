@@ -16,5 +16,10 @@ namespace WCPAL
         private List<int> _criteriaQuantity;
         private List<int> _criteriaTimestamp;
         private List<int> _criteriaCreated;
+
+        internal static AchievementMap ReadAchiements(System.Xml.Linq.XElement xElement)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

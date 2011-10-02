@@ -8,7 +8,7 @@ namespace WCPAL
     /// <summary>
     /// Character Statistics
     /// </summary>
-    public class Stat
+    public class Stats
     {
         private int _health;
 
@@ -345,6 +345,11 @@ namespace WCPAL
         {
             get { return _rangedHitRating; }
             
+        }
+
+        internal static Stats ReadStat(System.Xml.Linq.XElement xElement)
+        {
+            throw new NotImplementedException();
         }
     }
 }

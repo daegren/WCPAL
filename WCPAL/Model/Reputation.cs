@@ -40,5 +40,10 @@ namespace WCPAL
         {
             get { return _max; }
         }
+
+        internal static List<Reputation> ReadReputations(System.Xml.Linq.XElement xElement)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

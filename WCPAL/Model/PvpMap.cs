@@ -5,9 +5,9 @@ using System.Text;
 
 namespace WCPAL
 {
-    public class ItemSet
+    public class PvpMap
     {
-        internal static ItemSet ReadItemSet(System.Xml.Linq.XElement xElement)
+        internal static PvpMap ReadPvpMap(System.Xml.Linq.XElement xElement)
         {
             throw new NotImplementedException();
         }

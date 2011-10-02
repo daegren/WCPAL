@@ -22,5 +22,10 @@ namespace WCPAL
         {
             get { return _name; }
         }
+
+        internal static List<Title> ReadTitles(System.Xml.Linq.XElement xElement)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

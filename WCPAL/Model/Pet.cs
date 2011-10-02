@@ -57,5 +57,10 @@ namespace WCPAL
         {
             get { return _slot; }
         }
+
+        internal static List<Pet> ReadPets(XElement xElement)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

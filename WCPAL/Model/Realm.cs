@@ -16,16 +16,11 @@ namespace WCPAL
         private String _population;
         private DateTime _lastUpdated;
 
-        public Realm(string name, string slug, RealmType type, bool status, bool queue, string population)
+        public Realm() 
         {
-            _name = name;
-            _slug = slug;
-            _type = type;
-            _status = status;
-            _queue = queue;
-            _population = population;
             _lastUpdated = DateTime.Now;
         }
+
 
         /// <summary>
         /// The name of the realm
@@ -140,14 +135,14 @@ namespace WCPAL
         {
             Realm r;
 
-            r = new Realm(
-                rlm.Element("name").Value,
-                rlm.Element("slug").Value,
-                (RealmType)Enum.Parse(typeof(RealmType), rlm.Element("type").Value.ToUpper()),
-                bool.Parse(rlm.Element("status").Value),
-                bool.Parse(rlm.Element("queue").Value),
-                rlm.Element("population").Value
-            );
+            r = new Realm() {
+                _name = rlm.Element("name").Value,
+                _slug = rlm.Element("slug").Value,
+                _type = (RealmType)Enum.Parse(typeof(RealmType), rlm.Element("type").Value.ToUpper()),
+                _status = bool.Parse(rlm.Element("status").Value),
+                _queue = bool.Parse(rlm.Element("queue").Value),
+                _population = rlm.Element("population").Value
+            };
 
             return r;
         }

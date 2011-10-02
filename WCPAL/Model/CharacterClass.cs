@@ -163,5 +163,11 @@ namespace WCPAL
                 };
             }
         }
+
+        internal static CharacterClass GetClass(string c)
+        {
+            // TODO: given an in represting the ID return the proper character class;
+            throw new NotImplementedException();
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace WCPAL
 
         BattlenetConnectionOptions _connectionOptions;
 
-        WebRequest _wr;
+        HttpWebRequest _wr;
 
         protected BasePlatform(String url, BattlenetConnectionOptions connectionOptions)
         {
@@ -41,19 +41,34 @@ namespace WCPAL
             else
                 r = String.Format(_cnApiUrl, _controller, _action);
 
-            _wr = WebRequest.Create(r);
+            _wr = WebRequest.Create(r) as HttpWebRequest;
 
             if (_connectionOptions.AuthenticationOptions.IsAuthenticated)
             {
                 BattlenetAuthenticationOptions authOptions = _connectionOptions.AuthenticationOptions;
                 DateTime currentTime = DateTime.UtcNow;
-                String stringToSign = _wr.Method + "\n" + currentTime.ToString("R") + "\n" + r + "\n"; // from wow-api-docs
-                UTF8Encoding encoding = new UTF8Encoding();
+                /*
+                UrlPath = <HTTP-Request-URI, from the port to the query string>
+
+                StringToSign = HTTP-Verb + "\n" +
+                    Date + "\n" +
+                    UrlPath + "\n";
+
+                Signature = Base64( HMAC-SHA1( UTF-8-Encoding-Of( PrivateKey ), StringToSign ) );
+
+                Header = "Authorization: BNET" + " " + PublicKey + ":" + Signature;
+                 */
+                String urlPath = "/api/" + _controller + "/" + _action.Split('?')[0] + "\n";
+                String stringToSign = _wr.Method + "\n" + 
+                    currentTime.ToString("R") + "\n" + 
+                    urlPath;
+                ASCIIEncoding encoding = new ASCIIEncoding();
                 byte[] bytesToSign =  encoding.GetBytes(stringToSign);
                 HMACSHA1 hasher = new HMACSHA1(encoding.GetBytes(authOptions.PrivateKey));
                 hasher.ComputeHash(bytesToSign);
-                String auth = String.Format("BNET {0}:{1}", authOptions.PublicKey, Convert.ToBase64String(hasher.Hash));
-                _wr.Headers.Set(HttpRequestHeader.Authorization, auth);
+                String signature = String.Format("BNET {0}:{1}", authOptions.PublicKey, Convert.ToBase64String(hasher.Hash));
+                _wr.Headers.Set(HttpRequestHeader.Authorization, signature);
+                _wr.Date = currentTime;
             }
             XmlDictionaryReader xdr = null;
             

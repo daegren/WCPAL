@@ -64,12 +64,20 @@ namespace WCPAL
             List<Realm> rlms = new List<Realm>();
 
             StringBuilder sb = new StringBuilder("realm/status?");
+            bool f = true;
             foreach (string r in realms)
             {
-                sb.Append("realm=" + r + "&");
+                string n = r.Replace(' ', '-'); // replace ' ' with - for slug versions
+                if (f)
+                {
+                    sb.Append("realms=" + n);
+                    f = false;
+                }
+                else
+                {
+                    sb.Append("," + n);
+                }
             }
-
-            sb.Remove(sb.Length - 1, 1); // remove last &
 
             XmlDictionaryReader xdr = ProcessRequest(sb.ToString());
 

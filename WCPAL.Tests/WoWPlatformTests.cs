@@ -13,14 +13,25 @@ namespace WCPAL.Tests
     {
 
         WoWPlatform wp;
-        string testRealm = "Sentinels";
+        string testRealm = "Llane";
         List<String> testRealmList = new List<String>();
-        
+        WoWPlatform authedwp;
 
         
         public WoWPlatformTests()
         {
             wp = new WoWPlatform();
+            BattlenetConnectionOptions bco = new BattlenetConnectionOptions()
+            {
+                AuthenticationOptions = new BattlenetAuthenticationOptions()
+                {
+                    IsAuthenticated = true,
+                    PrivateKey = WCPAL.Tests.Constants.PRIVATE_KEY,
+                    PublicKey = WCPAL.Tests.Constants.PUBLIC_KEY
+                },
+                IsSecure = false
+            };
+            authedwp = new WoWPlatform(bco);
         }
 
         [TestInitialize]
@@ -65,6 +76,22 @@ namespace WCPAL.Tests
                 Assert.Fail(ex.Message);
             }
 
+        }
+
+        [TestMethod]
+        public void GetSingleAuthenticatedRealmStatus()
+        {
+            try
+            {
+                Realm r = authedwp.GetRealmStatus(testRealm);
+
+                Assert.IsTrue(r.Name.Equals(testRealm), "Didn't return the correct realm");
+                Assert.IsTrue(r.Type.Equals(RealmType.PVE), "Didn't return the correct realm type");
+            }
+            catch (BattlenetConnectionException ex)
+            {
+                Assert.Fail(ex.Message);
+            }
         }
 
         [TestMethod]

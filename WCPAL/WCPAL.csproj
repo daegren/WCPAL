@@ -85,6 +85,7 @@
     <Compile Include="Model\Stats.cs" />
     <Compile Include="Model\Talent.cs" />
     <Compile Include="Model\TalentTree.cs" />
+    <Compile Include="Utilities\GeneralUtilities.cs" />
     <Compile Include="WoWPlatform.cs" />
     <Compile Include="Model\Realm.cs" />
     <Compile Include="Model\RealmType.cs" />

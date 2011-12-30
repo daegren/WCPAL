@@ -129,7 +129,7 @@ namespace WCPAL
             XElement el = XElement.Load(xdr);
             XElement cha = el.Element("item");
 
-            c = Character.ReadCharacter(cha);
+            c = Character.ReadCharacter(el);
 
             if (c.Name.ToLower() != name.ToLower())
                 throw new InvalidRealmException(name);

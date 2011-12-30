@@ -11,7 +11,7 @@ namespace WCPAL
     /// </summary>
     public class Character
     {
-        private int _lastModified;
+        private DateTime _lastModified;
         private string _name;
         private string _realm;
         private CharacterClass _class;
@@ -37,7 +37,7 @@ namespace WCPAL
         private List<int> _quests;
         private PvpMap _pvpStats;
 
-        public DateTime LastModified { get { return new DateTime(_lastModified); } }
+        public DateTime LastModified { get { return _lastModified; } }
         public String Name { get { return _name; } }
         public String Realm { get { return _realm; } }
         public CharacterClass Class { get { return _class; } }
@@ -72,25 +72,25 @@ namespace WCPAL
                 _achievementPoints = int.Parse(cha.Element("achievementPoints").Value),
                 _class = CharacterClass.GetClass(cha.Element("class").Value),
                 _gender = (Gender)int.Parse(cha.Element("gender").Value),
-                _lastModified = int.Parse(cha.Element("lastModified").Value),
+                _lastModified = GeneralUtilites.ConvertFromUnixTimestamp(cha.Element("lastModified").Value),
                 _level = int.Parse(cha.Element("level").Value),
                 _name = cha.Element("name").Value,
                 _race = Race.GetRace(cha.Element("race").Value),
                 _realm = cha.Element("realm").Value,
                 _thumbnail = cha.Element("thumbnail").Value,
 
-                _guild = GuildMember.ReadGuildMember(cha.Element("guild")),
-                _stats = Stats.ReadStat(cha.Element("stats")),
-                _talents = Talent.ReadTalent(cha.Element("talents")),
-                _items = ItemSet.ReadItemSet(cha.Element("items")),
-                _reputation = Reputation.ReadReputations(cha.Element("reputation")),
-                _titles = Title.ReadTitles(cha.Element("titles")),
-                _professions = ProfessionSet.ReadProfessionSet(cha.Element("professions")),
-                _appearance = Appearance.ReadAppearance(cha.Element("appearance")),
-                _pets = Pet.ReadPets(cha.Element("pets")),
-                _achievements = AchievementMap.ReadAchiements(cha.Element("achievments")),
-                _progression = Progression.ReadProgression(cha.Element("progression")),
-                _pvpStats = PvpMap.ReadPvpMap(cha.Element("pvp"))
+                _guild = cha.Element("guild") != null ? GuildMember.ReadGuildMember(cha.Element("guild")) : null,
+                _stats = cha.Element("stats") != null ? Stats.ReadStat(cha.Element("stats")) : null,
+                _talents = cha.Element("talents") != null ? Talent.ReadTalent(cha.Element("talents")) : null,
+                _items = cha.Element("items") != null ? ItemSet.ReadItemSet(cha.Element("items")) : null,
+                _reputation = cha.Element("reputation") != null ? Reputation.ReadReputations(cha.Element("reputation")) : null,
+                _titles = cha.Element("titles") != null ? Title.ReadTitles(cha.Element("titles")) : null,
+                _professions = cha.Element("professions") != null ? ProfessionSet.ReadProfessionSet(cha.Element("professions")) : null,
+                _appearance = cha.Element("appearance") != null ? Appearance.ReadAppearance(cha.Element("appearance")) : null,
+                _pets = cha.Element("pets") != null ? Pet.ReadPets(cha.Element("pets")) : null,
+                _achievements = cha.Element("achievments") != null ? AchievementMap.ReadAchiements(cha.Element("achievments")) : null,
+                _progression = cha.Element("progression") != null ? Progression.ReadProgression(cha.Element("progression")) : null,
+                _pvpStats = cha.Element("pvp") != null ? PvpMap.ReadPvpMap(cha.Element("pvp")) : null
             };
 
             if (cha.Element("companions") != null)

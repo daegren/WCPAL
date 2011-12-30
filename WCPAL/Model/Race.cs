@@ -195,7 +195,36 @@ namespace WCPAL
         internal static Race GetRace(string p)
         {
             // TODO: given an in represting the ID return the proper character race;
-            throw new NotImplementedException();
+            int iRace = int.Parse(p);
+            switch (iRace)
+            {
+                case 1:
+                    return Human;
+                case 2:
+                    return Orc;
+                case 3:
+                    return Dwarf;
+                case 4:
+                    return NightElf;
+                case 5:
+                    return Undead;
+                case 6:
+                    return Tauren;
+                case 7:
+                    return Gnome;
+                case 8:
+                    return Troll;
+                case 9:
+                    return Goblin;
+                case 10:
+                    return BloodElf;
+                case 11:
+                    return Draenei;
+                case 22:
+                    return Worgen;
+                default:
+                    return null;
+            }
         }
     }
 
